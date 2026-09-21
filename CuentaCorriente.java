@@ -2,12 +2,15 @@ public class CuentaCorriente extends Cuenta {
 
     protected float sobregiro = 0;
 
+    // Constructor vacio
     public CuentaCorriente() {}
 
+    // Constructor con atributos
     public CuentaCorriente(float saldo, float tasaAnual) {
         super(saldo, tasaAnual);
     }
 
+    // Getters y Setters
     public float getSobregiro() {
         return sobregiro;
     }
@@ -16,6 +19,7 @@ public class CuentaCorriente extends Cuenta {
         this.sobregiro = sobregiro;
     }
 
+    // Metodo RETIRAR y CONSIGNAR con sobregiro
     @Override
     public void retirar(float cantidad) {
         if (cantidad <= saldo) {
@@ -46,6 +50,7 @@ public class CuentaCorriente extends Cuenta {
         numeroConsignaciones++;
     }
 
+    // Imprimir informacion
     public void imprimir() {
         System.out.println("Saldo: " + saldo);
         System.out.println("Comision mensual: " + comisionMensual);
