@@ -1,0 +1,63 @@
+public class Main{
+    public static void main(String[] args) {
+        System.out.println("=== SISTEMA DE CUENTAS BANCARIAS ===");
+
+        System.out.println("\n--- Cuenta de Ahorros ---");
+        CuentaAhorros cuentaAhorros = new CuentaAhorros(2500, 5, true);
+        System.out.println("Cuenta creada");
+        cuentaAhorros.imprimir();
+
+        System.out.println("Consignando 500...");
+        cuentaAhorros.consignar(500);
+        cuentaAhorros.imprimir();
+
+        System.out.println("Retirando 1000...");
+        cuentaAhorros.retirar(1000);
+        cuentaAhorros.imprimir();
+
+        System.out.println("Extacto mensual...");
+        cuentaAhorros.extractoMensual();
+        cuentaAhorros.imprimir();
+
+        System.out.println("\n--- Cuenta Corriente ---");
+        CuentaCorriente cuentaCorriente = new CuentaCorriente(1000, 2);
+        System.out.println("Cuenta creada");
+        cuentaCorriente.imprimir();
+
+        System.out.println("Consignando 300...");
+        cuentaCorriente.consignar(300);
+        cuentaCorriente.imprimir();
+
+        System.out.println("Retirando 1500...");
+        cuentaCorriente.retirar(1500);
+        cuentaCorriente.imprimir();
+
+        System.out.println("Consignando 400 para cubrir sobregiro...");
+        cuentaCorriente.consignar(400);
+        cuentaCorriente.imprimir();
+
+        System.out.println("\n---  Cuenta inactiva ---");
+        CuentaAhorros cuentaInactiva = new CuentaAhorros(1000, 3, false);
+
+        cuentaInactiva.imprimir();
+        System.out.println("Intentando retirar 500 de una cuenta inactiva:");
+        cuentaInactiva.retirar(500);
+
+        System.out.println("\n--- DEMOSTRACIÓN: Cálculo de Intereses ---");
+        // Ejemplo: cuenta con saldo $1000, tasa anual 12%
+        CuentaAhorros cuentaInteres = new CuentaAhorros(1000, 12, true);
+        System.out.println("Saldo inicial: $1000");
+        System.out.println("Tasa anual: 12%");
+
+        System.out.println("\nPaso 1: Convertir tasa anual a mensual");
+        System.out.println("  interesMensual = (12 / 12) / 100 = 0.01");
+
+        System.out.println("\nPaso 2: Aplicar interes al saldo");
+        System.out.println("  interesGanado = 1000 * 0.01 = $10");
+        System.out.println("  nuevoSaldo = 1000 + 10 = $1010");
+
+        cuentaInteres.calcularInteres();
+        System.out.println("\nSaldo después de calcular intereses: $" + cuentaInteres.getSaldo());
+
+    }
+}
