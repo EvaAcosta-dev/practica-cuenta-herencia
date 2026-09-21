@@ -19,5 +19,29 @@ public class Main{
         cuentaAhorros.extractoMensual();
         cuentaAhorros.imprimir();
 
+        System.out.println("\n--- Cuenta Corriente ---");
+        CuentaCorriente cuentaCorriente = new CuentaCorriente(1000, 2);
+        System.out.println("Cuenta creada");
+        cuentaCorriente.imprimir();
+
+        System.out.println("Consignando 300...");
+        cuentaCorriente.consignar(300);
+        cuentaCorriente.imprimir();
+
+        System.out.println("Retirando 1500...");
+        cuentaCorriente.retirar(1500);
+        cuentaCorriente.imprimir();
+
+        System.out.println("Consignando 400 para cubrir sobregiro...");
+        cuentaCorriente.consignar(400);
+        cuentaCorriente.imprimir();
+
+        System.out.println("\n---  Cuenta inactiva ---");
+        CuentaAhorros cuentaInactiva = new CuentaAhorros(1000, 3, false);
+
+        cuentaInactiva.imprimir();
+        System.out.println("Intentando retirar 500 de una cuenta inactiva:");
+        cuentaInactiva.retirar(500);
+
     }
 }
