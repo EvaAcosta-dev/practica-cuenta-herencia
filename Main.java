@@ -43,21 +43,5 @@ public class Main{
         System.out.println("Intentando retirar 500 de una cuenta inactiva:");
         cuentaInactiva.retirar(500);
 
-        System.out.println("\n--- DEMOSTRACIÓN: Cálculo de Intereses ---");
-        // Ejemplo: cuenta con saldo $1000, tasa anual 12%
-        CuentaAhorros cuentaInteres = new CuentaAhorros(1000, 12, true);
-        System.out.println("Saldo inicial: $1000");
-        System.out.println("Tasa anual: 12%");
-
-        System.out.println("\nPaso 1: Convertir tasa anual a mensual");
-        System.out.println("  interesMensual = (12 / 12) / 100 = 0.01");
-
-        System.out.println("\nPaso 2: Aplicar interes al saldo");
-        System.out.println("  interesGanado = 1000 * 0.01 = $10");
-        System.out.println("  nuevoSaldo = 1000 + 10 = $1010");
-
-        cuentaInteres.calcularInteres();
-        System.out.println("\nSaldo después de calcular intereses: $" + cuentaInteres.getSaldo());
-
     }
 }
